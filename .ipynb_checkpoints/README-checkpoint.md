@@ -1,4 +1,6 @@
-# Keithley-IV-Sweep
+# Capturing and Analyzing Transistor Curves for OFET Mobility
+
+### Keithley-IV-Sweep
 Python (PyVisa) script for IV (Current-Voltage) measurements on a Keithley 2400 (GPIB/SCIP communication).
 
 Instructions:
@@ -31,4 +33,20 @@ Instructions:
 ### Changing parameters and controlling the Keithley from the command line
 
 You can modify your version of the python scripts to do different things and even run the instruments from the command line. Start by taking a look at the existing scripts and understanding how the instruments and the VISA driver communicate. Then, read through the this manual (http://research.physics.illinois.edu/bezryadin/labprotocol/Keithley2400Manual.pdf) which will indicate other commands that the keithley will accept and in the form to deliver them. 
+    
+### Design for automated characteristic curves capture!
+
+The system should take a simple input involving the material and the particular information about the transitor fabrication including:
+
+    1. active layer thickness
+    2. channel size (shouldnt change)
+    3. Self-assembled monoalyer material
+    4. annealing time and temperature
+    5. Casting solvent
+    
+The system should take in these variables, and then initialize a program that generates the requireed curves and saves them in a folder along with a text file that contains the transistor information. The raw data will sit in .txt files titled only by the number of trial and the type of curve that it is, along with voltage parameters. The anakysis will be performed with another program. 
+
+### triggering
+
+Upon entering the information and initializing the system, each curve is triggered externally somehow, and terminated with a command!
     
